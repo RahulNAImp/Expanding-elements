@@ -1,0 +1,83 @@
+/* we will import some google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+#mainHeading {
+    color: aliceblue;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+#para1 {
+    color: aliceblue;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    margin: 0;
+    background-image: url('https://plus.unsplash.com/premium_photo-1720616742209-5ca756a58be7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZvb2QlMjBiYWNrZ3JvdW5kJTIwaW1hZ2UlMjBkYXJrfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+}
+.pannel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 78vh;
+    border-radius: 30px;
+    color: aliceblue;
+    /* when we hover over the image it should be a pointer cursor */
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+.pannel h3 {
+    font-size: 26px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    /* we are making the opacity as 0 because initially we shold not see any text    after expanding them it should be visible  */
+    opacity: 0;
+    transition: opacity 0.5s ease-in 0.3s;
+}
+
+.pannel.active {
+    flex: 5;
+}
+.pannel.active h3 {
+    opacity: 1;
+    color:chartreuse;
+    /* position: absolute; */
+}
+
+/* adding some media queries to make it responsive for mobile devices */
+@media (max-width : 480px) {
+    .container {
+        width: 100vw;
+    }
+    .pannel:nth-of-type(4),.pannel:nth-of-type(5) {
+        display: none;
+    }
+} 
